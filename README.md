@@ -1,4 +1,5 @@
-An Ecommerce website for selling shoes
+**An Ecommerce website for selling shoes**
+
 ![image](https://user-images.githubusercontent.com/67819043/170855665-2aecf305-4d0b-442c-a3c5-9f3858b8061d.png)
 
 Website is completely function with its connected backend with Sanity.io from where we can the update banners, products and add extra products. 
