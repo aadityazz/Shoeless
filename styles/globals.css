@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 
 html,
 body, * {
@@ -18,7 +19,7 @@ a {
 }
 
 .main-container{
-max-width: 1400px; 
+max-width: 1400px;
 margin: auto;
 width: 100%;
 
@@ -28,6 +29,7 @@ width: 100%;
 }
 
 .navbar-container{
+  border-bottom: solid #1C2430;
   padding-top: 10px;
   padding-bottom: 10px;
   display: flex;
@@ -67,12 +69,15 @@ width: 100%;
     -webkit-text-stroke: 1px #f02d34;
     margin-left: 6px;
 }
-.logo{
-  color: gray;
-  font-size: 28px;
+.logo-image{
+  height: 50px;
+  text-align: center;
+  border-radius: 15px;
+  transform: scale(1, 1);
+  transition: transform 0.5s ease;
 }
 .cart-icon{
-  font-size: 25px;
+  font-size: 35px;
   color: gray;
   cursor: pointer;
   position: relative;
@@ -80,6 +85,20 @@ width: 100%;
   border: none;
   background-color: transparent;
 }
+
+.login-icon{
+  right: 50px;
+  font-size: 35px;
+  color: gray;
+  cursor: pointer;
+  transition: transform .4s ease;
+  border: none;
+  background-color: transparent;
+}
+.login-icon:hover{
+  transform: scale(1.1,1.1);
+}
+
 .cart-icon:hover{
   transform: scale(1.1,1.1);
 }
@@ -88,7 +107,7 @@ width: 100%;
   right: -8px;
   font-size: 12px;
   color: #eee;
-  background-color: #f02d34;
+  background-color: #2a8558;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -120,6 +139,7 @@ width: 100%;
  background-color: #ebebeb;
   transform: scale(1, 1);
   transition: transform 0.5s ease;
+
 }
 
 .product-name{
@@ -132,12 +152,13 @@ width: 100%;
 }
 
 .hero-banner-container{
+  margin-top: 30px;
   padding: 100px 40px;
   background-color: #dcdcdc;
   border-radius: 15px;
   position: relative;
   height: 500px;
-  line-height: 0.9; 
+  line-height: 0.9;
   width: 100%;
 
 }
@@ -147,7 +168,7 @@ width: 100%;
 .hero-banner-container button{
    border-radius: 15px;
   padding: 10px 16px;
-  background-color: #f02d34;
+  background-color: #EA4C89;
   color: white;
   border: none;
   margin-top: 40px;
@@ -160,23 +181,108 @@ width: 100%;
 .hero-banner-container h3{
   font-size: 4rem;
   margin-top: 4px;
-  z-index:1;
+  z-index: 0;
 }
 .hero-banner-container h1{
   color: white;
   font-size: 10em;
   margin-left: -20px;
   text-transform: uppercase;
-  z-index: 1;
+  z-index: 0;
 }
 .hero-banner-image{
-  z-index:0;
+  z-index:1;
   position: absolute;
   top: 0%;
   right:20%;
   width: 450px;
   height: 450px;
 }
+
+.feature-banner{
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.feature-banner-image{
+  width: 100%;
+  height: 400px;
+}
+
+.feature-banner h3{
+  position: absolute;
+  top:65px;
+  right: 50px;
+  font-family: 'Mr Dafoe';
+  letter-spacing: 5px;
+  font-size: 4.5em;
+  margin-top: -0.6em;
+  color: white;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em #005fcb, 0 0 0.3em #67de37;
+  transform: rotate(-7deg);
+}
+
+
+.featured-banner-heading h2{
+  display: inline-block;
+  font-size: calc(90vw / 20);
+  white-space: nowrap;
+  line-height: 1.15;
+  display: block;
+  --gradient: linear-gradient(80deg, #8bfd50, #66f6ff);
+  background-image: var(--gradient);
+  background-clip: text;
+  /* for stupid WEBKIT -_- */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  /* for stupid WEBKIT -_- */
+  color: transparent;
+  position: relative;
+  text-align: center;
+  margin: .5em 0;
+  padding: .05em 0;
+  font-weight: 900;
+  position: relative;
+}
+
+
+.feature-banner-button{
+  position: absolute;
+  bottom: 100px;
+  right: 120px;
+  padding: 20px;
+}
+
+.feature-banner-button button{
+  padding: 10px 15px;
+    background-color: #EA4C89;
+     border-radius: 8px;
+                                                   border-style: none;
+                                                   box-sizing: border-box;
+                                                   color: #FFFFFF;
+                                                   cursor: pointer;
+                                                   display: inline-block;
+                                                   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                                                   font-size: 14px;
+                                                   font-weight: 500;
+                                                   height: 40px;
+                                                   line-height: 20px;
+                                                   list-style: none;
+                                                   margin: 0;
+                                                   outline: none;
+                                                   padding: 10px 16px;
+                                                   position: relative;
+                                                   text-align: center;
+                                                   text-decoration: none;
+                                                   transition: color 100ms;
+                                                   vertical-align: baseline;
+                                                   user-select: none;
+                                                   -webkit-user-select: none;
+                                                   touch-action: manipulation;
+}
+
 
 
 .desc{
@@ -220,11 +326,11 @@ flex-direction: column;
 }
 .footer-banner-container{
   padding: 100px 40px;
-  background-color: #f02d34;
+  background-color: #5eb5c0;
   border-radius: 15px;
   position: relative;
   height: 400px;
-  line-height: 1; 
+  line-height: 1;
   color: white;
   width: 100%;
   margin-top: 120px;
@@ -237,7 +343,7 @@ flex-direction: column;
   border-radius: 15px;
   padding: 10px 16px;
   background-color: white;
-  color: red;
+  color: #dea62c;
   border: none;
   margin-top: 40px;
   font-size: 18px;
@@ -294,7 +400,7 @@ flex-direction: column;
   float: right;
   padding: 40px 10px;
   position: relative;
-  
+
 }
 
 .footer-container{
@@ -332,7 +438,7 @@ flex-direction: column;
 }
 .cart-num-items{
   margin-left: 10px;
-  color: #f02d34;
+  color: #2892d7;
 }
 .empty-cart{
   margin:40px;
@@ -416,7 +522,7 @@ padding: 30px 65px;
   margin-top: 10px;
   margin-top: 40px;
   text-transform: uppercase;
-  background-color: #f02d34;
+  background-color: #2892d7;
   color: #fff;
   cursor: pointer;
     transform: scale(1, 1);
@@ -428,9 +534,8 @@ padding: 30px 65px;
 .product-detail-container{
   display: flex;
  gap: 40px;
- margin: 40px;
- margin-top: 60px;
- color: #324d67;
+  margin: 60px 40px 40px;
+  color: #324d67;
 
 }
 
@@ -464,7 +569,7 @@ padding: 30px 65px;
   background-color:#f02d34;
 }
 .reviews{
-  color: #f02d34;
+  color: #2892d7;
   margin-top: 10px;
   display: flex;
   gap: 5px;
@@ -485,7 +590,7 @@ padding: 30px 65px;
   font-weight: 700 ;
   font-size: 26px;
   margin-top: 30px;
-  color:#f02d34;
+  color: #2892d7;
 }
 .price .old-price, .product-price .old-price, .price .old-price{
   color: gray;
@@ -503,12 +608,12 @@ padding: 30px 65px;
 }
 .buttons .add-to-cart{
   padding: 10px 20px;
-  border: 1px solid #f02d34 ;
+  border: 1px solid #24af6a ;
   margin-top: 40px;
   font-size: 18px;
   font-weight: 500;
   background-color: white;
-  color: #f02d34;
+  color: #24af6a;
   cursor: pointer;
   width: 200px;
    transform: scale(1, 1);
@@ -521,7 +626,7 @@ padding: 30px 65px;
   width: 200px;
 
   padding: 10px 20px;
-  background-color: #f02d34;
+  background-color: #24af6a;
   color: white;
   border: none;
   margin-top: 40px;
@@ -756,7 +861,7 @@ margin-top: 160px;
   width: 550%;
 }
 .success-wrapper, .cancel-wrapper{
- 
+
   min-height: 69vh;
 }
 .success, .cancel {
@@ -774,4 +879,18 @@ margin-top: 160px;
   width: 300px;
   margin: auto;
 }
+}
+
+.brand-logos{
+  width: 100%;
+  height: 400px;
+  flex-direction: row;
+  display: flex;
+}
+.brand-logos img{
+  margin-top: 50px;
+  margin-bottom: 15px;
+  width: 250px;
+  height: 150px;
+  margin-left: 5%;
 }
