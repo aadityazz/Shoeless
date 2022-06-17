@@ -1,16 +1,15 @@
-import React, { useRef } from 'react';
+import React, {useRef, useState} from 'react';
 import Link from 'next/link';
 import { AiOutlineMinus, AiOutlinePlus, AiOutlineLeft, AiOutlineShopping } from 'react-icons/ai';
 import { TiDeleteOutline } from 'react-icons/ti';
 import toast from 'react-hot-toast';
-
 import { useStateContext } from '../context/StateContext';
 import { urlFor } from '../lib/client';
 import getStripe from '../lib/getStripe';
 
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
+  const { showForm, setShowForm, totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuanitity, onRemove } = useStateContext();
 
   const handleCheckout = async () => {
     const stripe = await getStripe();
@@ -24,7 +23,7 @@ const Cart = () => {
     });
 
     if(response.statusCode === 500) return;
-    
+
     const data = await response.json();
 
     toast.loading('Redirecting...');
@@ -97,11 +96,11 @@ const Cart = () => {
               <h3>Subtotal:</h3>
               <h3>Rs. {totalPrice}</h3>
             </div>
-            <div className="btn-container">
-              <button type="button" className="btn" onClick={handleCheckout}>
-                Pay with Stripe
-              </button>
-            </div>
+              <div className="btn-container">
+                <button type="button" className="btn" onClick={handleCheckout}>
+                  Checkout and Pay
+                </button>
+              </div>
           </div>
         )}
       </div>

@@ -9,7 +9,11 @@ export default async function handler(req, res) {
         submit_type: 'pay',
         mode: 'payment',
         payment_method_types: ['card'],
-        billing_address_collection: 'auto',
+        billing_address_collection: 'required',
+        phone_number_collection: {
+          enabled: true,
+        },
+        allow_promotion_codes: true,
         shipping_options: [
           { shipping_rate: process.env.SHIPPING_RATES },
         ],
@@ -18,9 +22,9 @@ export default async function handler(req, res) {
           const newImage = img.replace('image-', 'https://cdn.sanity.io/images/2ixk3vx6/production/').replace('-webp', '.webp');
 
           return {
-            price_data: { 
+            price_data: {
               currency: 'inr',
-              product_data: { 
+              product_data: {
                 name: item.name,
                 images: [newImage],
               },

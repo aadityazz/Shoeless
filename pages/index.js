@@ -1,24 +1,11 @@
 import React from 'react';
 
 import { client } from '../lib/client';
-import { NewProduct, Product, FooterBanner, IntroBanner, FeatureBanner,HeroBanner, Nike, Sketchers, Puma, Adidas } from '../components';
-import { Carousel } from "react-bootstrap";
+import { SpecialCollection, NewProduct, Product, FooterBanner, SpecialBanner,IntroBanner, FeatureBanner,HeroBanner, Nike, Sketchers, Puma, Adidas } from '../components';
 
-const Home = ({ newProducts, products, bannerData, introBannerData, featureBannerData, nikes, pumas, adidass, sketcherss }) => (
+const Home = ({specialCollections, newProducts, products, bannerData, specialBannerData,introBannerData, featureBannerData, nikes, pumas, adidass, sketcherss }) => (
   <div>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />
-      {/*<Carousel>*/}
-      {/*    <Carousel.Item>*/}
-      {/*        <Carousel.Caption>*/}
-      {/*            <HeroBanner heroBanner={bannerData.length && bannerData[0]}  />*/}
-      {/*        </Carousel.Caption>*/}
-      {/*    </Carousel.Item>*/}
-      {/*    <Carousel.Item>*/}
-      {/*        <Carousel.Caption>*/}
-      {/*            <IntroBanner introBanner={introBannerData && introBannerData[0]}/>*/}
-      {/*        </Carousel.Caption>*/}
-      {/*    </Carousel.Item>*/}
-      {/*</Carousel>*/}
 
     <div className="products-heading">
       <h2>Most selling shoes</h2>
@@ -39,12 +26,24 @@ const Home = ({ newProducts, products, bannerData, introBannerData, featureBanne
       <div className="featured-banner-heading">
           <h2>Shoeless Featured</h2>
       </div>
-
       <FeatureBanner featureBanner={featureBannerData &&featureBannerData[0]}/>
+
+      <div style={{display:"flex"}}>
+          <span>
+          <SpecialBanner specialBanner={specialBannerData &&specialBannerData[0]}/>
+      </span>
+          <span>
+           <IntroBanner introBanner={introBannerData &&introBannerData[0]}/>
+      </span>
+      </div>
+
+
 
       <div className="products-heading">
           <h2>Shop By brands</h2>
       </div>
+
+      <img style={{width:"100%", height:"700px", opacity:"0.8"}} src={"https://media.giphy.com/media/TWdxxbLIJyXHG/giphy.gif"}/>
 
       <div className="brand-logos">
           <img src="https://raw.githubusercontent.com/aadityazz/ASSETS/main/adidas-logo-png-hd-17.png"/>
@@ -85,10 +84,18 @@ const Home = ({ newProducts, products, bannerData, introBannerData, featureBanne
           {nikes?.map((nike) => <Nike key={nike._id} nike={nike} />)}
       </div>
 
+      {/*<div className="products-heading">*/}
+      {/*    <h2>Special Collection</h2>*/}
+      {/*</div>*/}
+
+      {/*/!*<div className="products-container">*!/*/}
+      {/*/!*    {specialCollections?.map((specialCollection) => <SpecialCollection key={specialCollection._id} specialCollection={specialCollection} />)}*!/*/}
+      {/*/!*</div>*!/*/}
 
     <FooterBanner footerBanner={bannerData && bannerData[0]} />
   </div>
 );
+
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
@@ -106,11 +113,17 @@ export const getServerSideProps = async () => {
     const introBannerQuery = '*[_type == "introBanner"]';
     const introBannerData = await client.fetch(introBannerQuery);
 
+    const specialBannerQuery = '*[_type == "specialBanner"]';
+    const specialBannerData = await client.fetch(specialBannerQuery);
+
     const nikeQuery = '*[_type == "nike"]';
     const nikes = await client.fetch(nikeQuery);
 
     const pumaQuery = '*[_type == "puma"]';
     const pumas = await client.fetch(pumaQuery);
+
+    const specialCollectionQuery = '*[_type == "specialCollection"]';
+    const specialCollections = await client.fetch(specialCollectionQuery);
 
     const adidasQuery = '*[_type == "adidas"]';
     const adidass = await client.fetch(adidasQuery);
@@ -119,7 +132,7 @@ export const getServerSideProps = async () => {
     const sketcherss = await client.fetch(sketchersQuery);
 
   return {
-    props: { products, newProducts, introBannerData, featureBannerData,bannerData, adidass, sketcherss, pumas, nikes}
+    props: { specialBannerData,products, newProducts, introBannerData, featureBannerData,bannerData, adidass, sketcherss, specialCollections, pumas, nikes}
   }
 }
 
