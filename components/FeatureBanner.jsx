@@ -10,7 +10,10 @@ const FeatureBanner = ({ featureBanner }) => {
                 <img src={urlFor(featureBanner.image)} alt="shoes" className="feature-banner-image"/>
                 <h3>{featureBanner.midText}</h3>
                 <div className="feature-banner-button">
-                    <button type="button">{featureBanner.buttonText}</button>
+                    <Link href={`/sketchers`}>
+                        <button type="button">{featureBanner.buttonText}</button>
+                    </Link>
+
                 </div>
             </div>
         </div>

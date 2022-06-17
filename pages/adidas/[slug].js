@@ -67,6 +67,15 @@ const AdidasDetails = ({ adidas, adidass }) => {
                 </div>
             </div>
 
+            <div className="product-detail-desc">
+                <h2>About Adidas</h2>
+                <img style={{width:"75px", height:"75px" }} src={"https://www.ajio.com/_ui/brand-logo/adidas.jpg"}/>
+                <p>STORIES, STYLES AND SPORTSWEAR AT ADIDAS, SINCE 1949
+                    Through sport we have the power to change lives. Adidas offers a home to the runner, the basketball
+                    player, the soccer kid and the fitness enthusiast. Our footwear and clothing lines keep you focused
+                    and supported during that race and right through the finish line!.</p>
+            </div>
+
             <div className="maylike-products-wrapper">
                 <h2>More from Adidas</h2>
                 <div className="marquee">

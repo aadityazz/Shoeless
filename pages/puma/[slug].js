@@ -67,6 +67,20 @@ const PumaDetails = ({ puma, pumas }) => {
                 </div>
             </div>
 
+            <div className="product-detail-desc">
+                <h2>About Puma</h2>
+                <img src={"https://www.ajio.com/_ui/brand-logo/puma.jpg"}/>
+                <p>PUMA is one of the world’s leading Sports Brands, designing, developing, selling and marketing footwear,
+                    apparel and accessories. For 70 years, PUMA has established a history of making fast product designs
+                    for the fastest athletes on the planet. PUMA offers performance and sport-inspired lifestyle products
+                    in categories such as Running and Training, Motorsports, Football, Badminton and Basketball. Sport
+                    style categories from PUMA include Sneakers, Slip-ons and Loungewear. It engages in exciting
+                    collaborations with renowned design brands to bring innovative and fast designs to the sports and
+                    sports-inspired lifestyle world. The company distributes its products in more than 120 countries and
+                    is headquartered in Herzogenaurach/Germany.</p>
+            </div>
+
+
             <div className="maylike-products-wrapper">
                 <h2>More from Puma</h2>
                 <div className="marquee">

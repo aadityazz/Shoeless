@@ -67,6 +67,22 @@ const NikeDetails = ({ nike, nikes }) => {
                 </div>
             </div>
 
+            <div className="product-detail-desc">
+                <h2>About Nike</h2>
+                <img src={"https://www.ajio.com/_ui/brand-logo/nike.jpg"}/>
+                <p>Powerful, strong, durable – every athlete and their clothes. With innovative sportswear designed to
+                    bring optimum comfort and support, Nike brings to you the best you’ll ever get. Shop for Nike sports
+                    shoes now with shoeless!
+                    Choose from a variety of styles
+                    NIKE footwear: Providing sustainable innovations and solutions to athlete everywhere, Nike brings to
+                    you the best of sports shoes for men and women alike. +
+                    Shop these supportive, comfortable and long-lasting shoes with the comfort of online shopping from your home.
+                    Nike clothes: Have your pick from an exciting collection of Nike clothing to make work out as trendy
+                    as possible. Shop from shoeless and get Nike tank tops , t-shirts , track pants , Sports bras for women ,
+                    and caps for men . Pair them up with stylish hoodies for women and hoodies for men.
+                </p>
+            </div>
+
             <div className="maylike-products-wrapper">
                 <h2>More from Nike</h2>
                 <div className="marquee">
