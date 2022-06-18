@@ -4,6 +4,7 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 import { client, urlFor } from '../../lib/client';
 import { NewProduct } from '../../components';
 import { useStateContext } from '../../context/StateContext';
+import {Rating} from "@mui/material";
 
 const NewProductDetails = ({ newProduct, newProducts }) => {
     const { image, name, details, price } = newProduct;
@@ -39,14 +40,10 @@ const NewProductDetails = ({ newProduct, newProducts }) => {
                     <h1>{name}</h1>
                     <div className="reviews">
                         <div>
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiFillStar />
-                            <AiOutlineStar />
+                            <Rating value={newProduct.rating} readOnly></Rating>
                         </div>
                         <p>
-                            (20)
+                            ({newProduct.numReviews})
                         </p>
                     </div>
                     <h4>Details: </h4>

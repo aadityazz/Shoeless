@@ -14,6 +14,7 @@ export default async function handler(req, res) {
           enabled: true,
         },
         allow_promotion_codes: true,
+        // receipt_email: 'shoeless@example.com',
         shipping_options: [
           { shipping_rate: process.env.SHIPPING_RATES },
         ],

@@ -4,6 +4,8 @@ import { AiOutlineMinus, AiOutlinePlus, AiFillStar, AiOutlineStar } from 'react-
 import { client, urlFor } from '../../lib/client';
 import { Product } from '../../components';
 import { useStateContext } from '../../context/StateContext';
+import {Rating} from "@mui/material";
+
 
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
@@ -25,7 +27,7 @@ const ProductDetails = ({ product, products }) => {
           </div>
           <div className="small-images-container">
             {image?.map((item, i) => (
-              <img 
+              <img
                 key={i}
                 src={urlFor(item)}
                 className={i === index ? 'small-image selected-image' : 'small-image'}
@@ -39,14 +41,10 @@ const ProductDetails = ({ product, products }) => {
           <h1>{name}</h1>
           <div className="reviews">
             <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
+              <Rating value={product.rating} readOnly></Rating>
             </div>
             <p>
-              (20)
+              ({product.numReviews})
             </p>
           </div>
           <h4>Details: </h4>
